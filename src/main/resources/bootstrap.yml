@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: service-transference
+  cloud:
+    config:
+      uri: http://localhost:8099
+  profiles:
+    active: dev

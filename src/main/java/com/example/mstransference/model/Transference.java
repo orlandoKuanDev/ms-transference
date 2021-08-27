@@ -18,9 +18,8 @@ public class Transference {
     private String description;
 
     @Field(name = "origen")
-    private Acquisition origen;
+    private Bill origen;
 
     @Field(name = "destine")
-    private Acquisition destine;
-
+    private Bill destine;
 }
