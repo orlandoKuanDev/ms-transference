@@ -184,27 +184,5 @@ public class TransferenceHandler {
                                 .bodyValue(depositCreate))
                 .log()
                 .onErrorResume(e -> Mono.error(new RuntimeException(e.getMessage())));
-
-
-       /* return createDepositDTO
-                .zipWhen(depositRequest -> {
-                    return debitService.findByAccountNumber(depositRequest.getAccountNumber())
-                            .switchIfEmpty(Mono.defer(() -> {
-                                return Mono.just(new Debit());
-                            }));
-                })
-                .flatMap(data -> {
-                    if(data.getT2().getCardNumber() == null){
-                        return Mono.just(data.getT1()).as(this::createTransactionCardLess);
-                    }
-                    return Mono.just(Tuples.of(data.getT1(), data.getT2()))
-                            .as(this::createTransactionUpdateDebitWithCard);
-                })
-                .flatMap(depositCreate ->
-                        ServerResponse.ok()
-                                .contentType(APPLICATION_JSON)
-                                .bodyValue(depositCreate))
-                .log()
-                .onErrorResume(e -> Mono.error(new RuntimeException(e.getMessage())));*/
     }
 }
